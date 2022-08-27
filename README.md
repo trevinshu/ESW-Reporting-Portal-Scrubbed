@@ -2,7 +2,7 @@
 
 ## Description
 
-- Scrubbed internal reporting portal built for E.S.W IT Business Advisors.
+- Scrubbed internal reporting portal built for [E.S.W IT Business Advisors](https://eswit.com/).
 
 ## Screenshot
 
