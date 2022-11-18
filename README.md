@@ -10,7 +10,7 @@
 
 ## Live Link
 
-https://capstone-demo.netlify.app/
+https://esw-capstone-project.vercel.app/
 
 ## Username & Password
 
