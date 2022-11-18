@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import passwords from "../data/passwords.json";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import passwords from '../data/passwords.json';
 
 const Login = ({ setIsLoggedIn, setUser }) => {
-  const [error, setError] = useState({ message: "", error: true });
+  const [error, setError] = useState({ message: '', error: true });
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -11,7 +11,7 @@ const Login = ({ setIsLoggedIn, setUser }) => {
     let checking = true;
     let i = 0;
     while (checking) {
-      tempObj = { message: "", error: true };
+      tempObj = { message: '', error: true };
       let valid = true;
       if (e.target.username.value !== passwords[i].username) {
         valid = false;
@@ -24,10 +24,10 @@ const Login = ({ setIsLoggedIn, setUser }) => {
         setUser(passwords[i].name);
         setIsLoggedIn(true);
         checking = false;
-        localStorage.setItem("esw_logged_in_status", "logged_in");
-        localStorage.setItem("esw_user_name", passwords[i].name);
+        localStorage.setItem('esw_logged_in_status', 'logged_in');
+        localStorage.setItem('esw_user_name', passwords[i].name);
       } else {
-        tempObj.message = "Username or Password is incorrect.";
+        tempObj.message = 'Username or Password is incorrect.';
         setError(tempObj);
       }
       i++;
@@ -51,12 +51,12 @@ const Login = ({ setIsLoggedIn, setUser }) => {
         <h2>LOGIN</h2>
         <form>
           <label>
-            <p styles={{ color: "#ccc" }}>Username</p>
-            <StyledInput name="username" type="text" formMethod="post" />
+            <p styles={{ color: '#ccc' }}>Username</p>
+            <StyledInput name="username" type="text" formMethod="post" value="admin01" />
           </label>
           <label>
-            <p styles={{ color: "#ccc" }}>Password</p>
-            <StyledInput type="password" name="password" />
+            <p styles={{ color: '#ccc' }}>Password</p>
+            <StyledInput type="password" name="password" value="eswcapstoneapp" />
           </label>
           <div>
             <ErrorMessage error={error.error}>{error.message}</ErrorMessage>
@@ -128,7 +128,7 @@ const LoginContainer = styled.div`
   left: 0;
 
   .bottom-left-image {
-    background-image: url("/images/login-bg-bottom-left.png");
+    background-image: url('/images/login-bg-bottom-left.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -140,7 +140,7 @@ const LoginContainer = styled.div`
   }
 
   .top-right-image {
-    background-image: url("/images/login-bg-top-right.png");
+    background-image: url('/images/login-bg-top-right.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -152,7 +152,7 @@ const LoginContainer = styled.div`
   }
 
   .logo-image {
-    background-image: url("/images/ESW-logo.png");
+    background-image: url('/images/ESW-logo.png');
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
@@ -166,8 +166,8 @@ const LoginContainer = styled.div`
 `;
 
 const ErrorMessage = styled.p`
-  display: ${(props) => (props.error ? "inherit" : "none")};
-  color: ${(props) => (props.error ? "#f96157" : "#000000")};
+  display: ${(props) => (props.error ? 'inherit' : 'none')};
+  color: ${(props) => (props.error ? '#f96157' : '#000000')};
   font-size: 20px;
   text-align: center;
 `;
